@@ -1,0 +1,21 @@
+
+*{ margin:0; padding:0; }
+li{ list-style:none; }
+a{ text-decoration:none;color: #00B7FF; }
+img{ vertical-align:top; }
+input{ outline:none; }
+textarea{ resize:none; }
+
+html{ font-size:50px;height: 100%; }
+body {
+  height: 100%;
+  font:0.28rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.fl{ float: left; }
+.fr{ float: right; }
+.clearFix:after{ content: '';display: 'block';clear: both; }
+.oneLineLimite{ white-space: nowrap;overflow: hidden;text-overflow: ellipsis; }
+.twoLineLimite{ overflow: hidden;text-overflow: ellipsis; display:-webkit-box; -webkit-box-orient:vertical;-webkit-line-clamp:2; }
+
+
+

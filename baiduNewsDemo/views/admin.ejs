@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Admin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- XXX -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/admin.css">
+    <link href="/stylesheets/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+
+    <!-- requirejs -->
+    <script type="text/javascript" src="/javascripts/require.js" data-main="/javascripts/main" ></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <a class="navbar-brand" href="#">百度新闻后台管理器</a>
+        </div>
+        <!-- <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div> --><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+    <div class="container">
+		<!-- 页面主体 -->
+      <div class="row clearFix">
+      	<!-- 评论信息详情 .col-xs-6 .col-sm-6 col-md-6 .col-lg-6--> 
+      	<div class="content-l fl">
+      		<div class="panel panel-default bd-news-release">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">新闻发布器</h3>
+			  </div>
+			  <div class="panel-body">
+			    <form>
+				  <div class="form-group has-error">
+				    <label for="bd-news-title">新闻标题</label>
+				    <input type="text" class="form-control" id="bd-news-title" placeholder="请输入标题" name="title">
+				  </div>
+				  <div class="form-group">
+				    <label for="bd-news-content">新闻正文</label>
+				    <textarea class="form-control" rows="3" id="bd-news-content" name="content"></textarea>
+				  </div>
+				  <div class="form-group">
+				    <label for="bd-news-imglink">新闻图片地址</label>
+				    <input type="text" class="form-control" id="bd-news-imglink" placeholder="请输入图片网址">
+				    <p class="help-block">这是图片的网址.</p>
+				  </div>
+				  <div class="form-group">
+				    <label for="bd-news-source">新闻来源</label>
+				    <input type="text" class="form-control" id="bd-news-source" placeholder="请输入来源">
+				  </div>
+				  <div class="form-group">
+		                <!-- <label for="bd-news-date" class="control-label">新闻日期</label>
+		                <br/>
+		                <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="bd-news-date" data-link-format="yyyy-mm-dd">
+		                    <input class="form-control" size="16" type="text" value="" readonly>
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+		                </div>
+						<input type="hidden" id="bd-news-date" value="" /><br/> -->
+
+						<label for="bd-news-date">新闻日期</label>
+						<br/>
+						<input id="bd-news-date" type="date" value="2017/07/01"  class="form-control" />
+		           </div>
+				  <div class="form-group">
+				    <label for="bd-news-tag">新闻标签</label>
+				    <br/>
+				    <select id="bd-news-tag" onchange="newsTagChange()"  class="form-control" >
+					  <option grade='1'>推荐</option>
+					  <option grade='2'>百家</option>
+					  <option grade='3'>本地</option>
+					  <option grade='4'>图片</option>
+					  <option grade='5'>娱乐</option>
+					  <option grade='6'>社会</option>
+					  <option grade='7'>军事</option>
+					  <option grade='8'>互联网</option>
+					  <option grade='9'>科技</option>
+					</select>
+				  </div>
+				  <button type="button" class="btn btn-primary" id="postBtn" data-toggle="modal" data-target="#myModal">提交</button>
+				  <!-- 模态框（Modal） -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					    <div class="modal-dialog">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					                <h4 class="modal-title" id="myModalLabel">标题</h4>
+					            </div>
+					            <div class="modal-body">are you ok?</div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					                <button type="button" class="btn btn-primary" id="surePost">确定</button>
+					            </div>
+					        </div><!-- /.modal-content -->
+					    </div><!-- /.modal -->
+					</div>
+				</form>
+			  </div>
+			</div>
+      	</div>
+
+      	<!-- 评论列表 .col-xs-6 .col-sm-6 col-md-6 .col-lg-6-->
+		<div class="content-r fl">	
+			<div class="panel panel-default bd-news-list">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">新闻列表</h3>
+			  </div>
+			  <div class="panel-body">
+			    <div class="table-responsive bd-newsbody">
+		            <table class="table table-striped bd-newsTable">
+		              <thead>
+		                <tr>
+		                  <th>新闻编号</th>
+		                  <th>新闻标题</th>
+		                  <th>新闻时间</th>
+		                  <th>操作</th>
+		                </tr>
+		              </thead>
+		              <tbody>
+		                <!-- <tr>
+		                  <td>1,001</td>
+		                  <td>Lorem</td>
+		                  <td>ipsum</td>
+		                  <td><a href="javascript:;" onclick="removeRow(this)" >删除</a></td>
+		                </tr> -->
+		              </tbody>
+		            </table>
+		            <div class="tcdPageCode">
+    				</div>
+		        </div>
+			  </div>
+			</div>
+		</div>
+
+      </div>
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>这是底部 <a href="http://getbootstrap.com">后台</a> by <a href="https://twitter.com/mdo">@lori</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- fenye -->
+    <!-- <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+    <script src="http://www.lanrenzhijia.com/ajaxjs/jquery.page.js"></script> -->
+	
+	<!-- XXX -->
+	<!-- <link href="//cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css" rel="stylesheet"> -->
+	<!-- <script src="//cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script> -->
+    <!-- <script type="text/javascript" src="/javascripts/bootstrap-datetimepicker.js" charset="UTF-8"></script> -->
+	<!-- <script type="text/javascript" src="/javascripts/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script> -->
+	<!-- <script type="text/javascript" src="/javascripts/admin.js"></script> -->
+
+  </body>
+</html>

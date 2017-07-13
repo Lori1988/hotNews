@@ -1,0 +1,145 @@
+/*-------导航区域-------*/
+.jtb-nav {
+    width: 100%;
+    height: 90px;
+    background: rgb(68,68,68);
+    overflow: hidden;
+}
+.jtb-nav .nav{ width: 100%;height: 49px;border-bottom: 1px solid #fff;position: relative; }
+
+.jtb-nav .nav a{
+	width: 34px;
+    height: 100%;
+    background: url(/images/icon-bg.png) no-repeat;
+    background-size: 40px 500px;
+}
+
+.jtb-nav .nav .bd-website {
+	background-position: center 6px;
+    margin-left: 8px;
+}
+
+.jtb-nav .nav .bd-user {
+    background-position: center -461px;
+    margin-left: 10px
+}
+
+.jtb-nav .nav h3{
+	text-indent: -9999px;
+	width: 154px;
+    height: 51px;
+    background: url(/images/bg-news-logo.png) no-repeat;
+    background-position: center 10px;
+    background-size: 65px auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -77px;
+    margin-top: -25px;
+}
+
+.jtb-nav .nav .bd-search{ 
+	background-position: center -105px;
+    margin-right: 8px;
+ }
+
+.jtb-nav .nav .bd-right-btn {
+    background-position: center -160px;
+    margin-right: 10px;
+}
+
+.swiper-container{ width:100%; height:40px; }
+.swiper-container .swiper-slide{ padding: 0 4px;width:40px; height:40px; text-align:center; line-height:41px; background:rgb(68,68,68); }
+.swiper-container .swiper-slide a{ display: block;color:#fff;font-size:0.28rem; }
+/*-------导航区域 end -------*/
+
+/*-------轮播区域-------*/
+.jtb-banner{ width:100%;height:210px ; }
+.banner{ position:relative; height:210px; width:100%; overflow:hidden; }
+.imglist{ position:absolute; left:0; top:0; height:210px; width:400%; transition:1s all ease; }
+.imglist li{ width:25%; height:210px; float:left; line-height:210px; text-align:center; font-size:0.28rem; color:#fff; }
+.imglist li img{ width: 100%;height: 210px; }
+.imglist li:nth-child(1){ background:#f60; }
+.imglist li:nth-child(2){ background:#399; }
+.imglist li:nth-child(3){ background:#F69; }
+.imglist li:nth-child(4){ background:#FF6; }
+.btnlist{ width:40px;height:6px;overflow: hidden;position: absolute;right: 0;bottom: 0; }
+.btnlist .btn{ width:4px ;height:4px ;background: #ccc;float: left;display:block;margin-right:4px;border-radius: 50%; }
+.btnlist .on{ background: red; }
+/*-------轮播区域 end -------*/
+
+/*-------热点区域-------*/
+/*.jtb-goodsdetail-poster{  }*/
+.poster-t{ position: relative;width:100%;height:52px; }
+.poster-t a{ font-size:0.22rem;color: #000; }
+.poster-t span{ 
+	float: left;
+	width: 24px;
+    height: 14px;
+    background-color: #e02f2f;
+    color: #fff;
+    text-align: center;
+    line-height: 14px;
+    margin-top: 19px;
+    margin-left: 12px;
+    border-radius: 2px;
+    position: relative;
+}
+.poster-t p{ float: left;height: 40px; margin-left:8px;margin-top: 6px;line-height: 40px;text-align: left; }
+.jtb-goodsdetail-poster hr{ width: 96%;margin: 0 auto;background: #ccc; }
+/*-------热点区域 end-------*/
+
+/*列表区域*/
+.jtb-treasureType-list ul li {
+    position: relative;
+    overflow: hidden;
+    padding: 8.5px 0 10px;
+    margin: 0 17px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.jtb-treasureType-list .bd-newslist-img{
+	font-size: 0;
+    vertical-align: middle;
+    width: 33.33%;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+    margin-left: 0;
+    background-color: #F4F7F9;
+    position: relative;
+}
+.jtb-treasureType-list .bd-newslist-img img{ height: auto;width: 100%;vertical-align: middle; }
+
+.jtb-treasureType-list .bd-newslist-content{
+	overflow: hidden;
+	width: 66.66%;
+    padding-left: 14px;
+    flex: 2;
+    box-sizing: border-box;
+}
+
+.bd-newslist-content h3 {
+    font-size: .18rem;
+    line-height: .26rem;
+    color: #333;
+    max-height: .52rem;
+    overflow: hidden;
+}
+.bd-newslist-content p {
+    line-height: 17px;
+    height: 17px;
+    text-align: left;
+    font-weight: 400;
+    color: #999;
+    font-size: .13rem;
+    margin-right: 5px;
+}
+
+.bd-newslist-content i {
+    width:0.14rem ;height:0.22rem ;background: url(../images/rightflag.png) no-repeat;background-size: cover;margin-right:0.3rem ; 
+}
+/*列表区域 end*/
+
+
+
